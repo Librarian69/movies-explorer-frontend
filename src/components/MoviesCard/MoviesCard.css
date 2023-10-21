@@ -1,0 +1,101 @@
+.movies-card {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: inherit;
+    box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    cursor: pointer;
+}
+.movies-card__cover {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 151px;
+    object-fit: contain;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.movies-card__cover__container {
+    margin: 0;
+    padding: 14px 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.movies-card__desc {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.movies-card__title {
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+}
+.movies-card__duration {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    display: flex;
+    align-items: center;
+    color: #a0a0a0;
+}
+.movies-card__favorite-btn {
+    width: 24px;
+    height: 24px;
+    background-color: #f9f9f9;
+    /* box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.09); */
+    background-image: url("../../images/icon-like-invisible.svg");
+    background-repeat:no-repeat;
+    background-position: center;
+    border-radius: 50px;
+    border: 1px solid #ffffff;
+}
+.movies-card__favorite-btn:hover {
+    border: 1px solid #2be080;
+    cursor: pointer;
+
+}
+.movies-card__favorite-btn_active {
+    /* background-color: #2be080; */
+    background-image: url("../../images/icon-like.svg");
+    background-repeat:no-repeat;
+    background-position: center;
+    /* background-size: contain; */
+}
+.movies-card__delete-btn {
+    background-image: url("../../images/delete-button.svg");
+    width: 16px;
+    height: 16px;
+    border: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
+.movies-card__delete-btn:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+@media screen and (max-width: 1024px) {
+    .movies-card__cover {
+        height: 190px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .movies-card__cover {
+        height: 168px;
+    }
+}
