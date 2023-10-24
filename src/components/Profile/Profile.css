@@ -70,6 +70,21 @@
     gap: 16px;
     min-height: 16px;
 }
+
+.profile__link {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    color: #FF3055;
+    text-decoration: none;
+}
+
+.profile__link:hover {
+    opacity: 0.6;
+}
+
 .profile__edit {
     padding: 0;
     font-style: normal;
@@ -82,13 +97,16 @@
     background-color: white;
     cursor: pointer;
 }
+.profile__edit:hover {
+    opacity: 0.6;
+}
 .profile__logout {
-    font-style: normal;
+    /* font-style: normal;
     font-weight: 500;
     font-size: 13px;
     line-height: 16px;
     text-align: center;
-    color: #ff4062;
+    color: #ff4062; */
     border: none;
     background-color: transparent;
     cursor: pointer;
@@ -124,7 +142,7 @@
         font-size: 12px;
         line-height: 15px;
     }
-    .profile__logout {
+    .profile__link {
         font-size: 12px;
         line-height: 15px;
     }

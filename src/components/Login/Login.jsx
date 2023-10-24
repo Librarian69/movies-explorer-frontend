@@ -33,7 +33,7 @@ export default function Login() {
         <Link to="/" className="login__logo">
           <img src={logo} alt="Логотип сайта" />
         </Link>
-        <h2 className="login__title">Рады видеть!</h2>
+        <h1 className="login__title">Рады видеть!</h1>
 
         <Formik
           initialValues={initialValues}
@@ -46,7 +46,7 @@ export default function Login() {
                 <label className="user-form__field">
                   E-mail
                   <Field
-                    className="form__input form__input_type_email user-form__input"
+                    className="user-form__input user-form__input_type_email"
                     id="input-userEmail"
                     name="email"
                     type="email"
@@ -62,7 +62,7 @@ export default function Login() {
                 <label className="user-form__field">
                   Пароль
                   <Field
-                    className="form__input form__input_type_password user-form__input"
+                    className="user-form__input user-form__input_type_password"
                     id="input-password"
                     name="password"
                     type="password"

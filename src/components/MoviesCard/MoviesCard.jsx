@@ -27,210 +27,210 @@ export default function MoviesCard() {
         <>
           <li className="movies-card">
             <img className="movies-card__cover" src={film1} />
-            <div className="movies-card__cover__container">
-              <div className="movies-card__desc">
-                <h5 className="movies-card__title">33 слова о дизайне</h5>
-                <p className="movies-card__duration">1ч42м</p>
-              </div>
-              <button
+            <div className="movies-card__container">
+              <div className="movies-card__desc">                
+                <h2 className="movies-card__title">33 слова о дизайне</h2>
+                <button
                 type="button"
                 className="movies-card__favorite-btn movies-card__favorite-btn_active"
-              ></button>
+              ></button>                
+              </div>
+              <p className="movies-card__duration">1ч 42м</p>              
             </div>
           </li>
           <li className="movies-card">
             <img className="movies-card__cover" src={film2} />
-            <div className="movies-card__cover__container">
-              <div className="movies-card__desc">
-                <h5 className="movies-card__title">Киноальманах «100 лет дизайна»</h5>
-                <p className="movies-card__duration">1ч42м</p>
-              </div>
-              <button
+            <div className="movies-card__container">
+            <div className="movies-card__desc">                
+                <h2 className="movies-card__title">Киноальманах «100 лет дизайна»</h2>
+                <button
                 type="button"
                 className="movies-card__favorite-btn"
-              ></button>
+              ></button>                
+              </div>
+              <p className="movies-card__duration">1ч 42м</p>  
             </div>
           </li>
           <li className="movies-card">
             <img className="movies-card__cover" src={film3} />
-            <div className="movies-card__cover__container">
-              <div className="movies-card__desc">
-                <h5 className="movies-card__title">В погоне за Бенкси</h5>
-                <p className="movies-card__duration">1ч42м</p>
-              </div>
-              <button
+            <div className="movies-card__container">
+            <div className="movies-card__desc">                
+                <h2 className="movies-card__title">В погоне за Бенкси</h2>
+                <button
                 type="button"
                 className="movies-card__favorite-btn"
-              ></button>
+              ></button>                
+              </div>
+              <p className="movies-card__duration">1ч 42м</p>  
             </div>
           </li>
           <li className="movies-card">
             <img className="movies-card__cover" src={film4} />
-            <div className="movies-card__cover__container">
-              <div className="movies-card__desc">
-                <h5 className="movies-card__title">Баския: Взрыв реальности</h5>
-                <p className="movies-card__duration">1ч42м</p>
-              </div>
-              <button
+            <div className="movies-card__container">
+            <div className="movies-card__desc">                
+                <h2 className="movies-card__title">Баския: Взрыв реальности</h2>
+                <button
                 type="button"
                 className="movies-card__favorite-btn"
-              ></button>
+              ></button>                
+              </div>
+              <p className="movies-card__duration">1ч 42м</p>  
             </div>
           </li>
           <li className="movies-card">
             <img className="movies-card__cover" src={film5} />
-            <div className="movies-card__cover__container">
-              <div className="movies-card__desc">
-                <h5 className="movies-card__title">Бег это свобода</h5>
-                <p className="movies-card__duration">1ч42м</p>
-              </div>
-              <button
+            <div className="movies-card__container">
+            <div className="movies-card__desc">                
+                <h2 className="movies-card__title">Бег это свобода</h2>
+                <button
                 type="button"
                 className="movies-card__favorite-btn movies-card__favorite-btn_active"
-              ></button>
+              ></button>                
+              </div>
+              <p className="movies-card__duration">1ч 42м</p>  
             </div>
           </li>
           <li className="movies-card">
             <img className="movies-card__cover" src={film6} />
-            <div className="movies-card__cover__container">
-              <div className="movies-card__desc">
-                <h5 className="movies-card__title">Книготорговцы</h5>
-                <p className="movies-card__duration">1ч42м</p>
-              </div>
-              <button
+            <div className="movies-card__container">
+              <div className="movies-card__desc">                
+                <h2 className="movies-card__title">Книготорговцы</h2>
+                <button
                 type="button"
                 className="movies-card__favorite-btn movies-card__favorite-btn_active"
-              ></button>
+              ></button>                
+              </div>
+              <p className="movies-card__duration">1ч 42м</p>  
             </div>
           </li>
           <li className="movies-card">
             <img className="movies-card__cover" src={film7} />
-            <div className="movies-card__cover__container">
-              <div className="movies-card__desc">
-                <h5 className="movies-card__title">Когда я думаю о Германии ночью</h5>
-                <p className="movies-card__duration">1ч42м</p>
-              </div>
-              <button
+            <div className="movies-card__container">
+            <div className="movies-card__desc">                
+                <h2 className="movies-card__title">Когда я думаю о Германии ночью</h2>
+                <button
                 type="button"
                 className="movies-card__favorite-btn"
-              ></button>
+              ></button>                
+              </div>
+              <p className="movies-card__duration">1ч 42м</p>  
             </div>
           </li>
           <li className="movies-card">
             <img className="movies-card__cover" src={film8} />
-            <div className="movies-card__cover__container">
-              <div className="movies-card__desc">
-                <h5 className="movies-card__title">Gimme Danger: История Игги и The Stooges</h5>
-                <p className="movies-card__duration">1ч42м</p>
-              </div>
-              <button
+            <div className="movies-card__container">
+              <div className="movies-card__desc">                
+                <h2 className="movies-card__title">Gimme Danger: История Игги и The Stooges</h2>
+                <button
                 type="button"
                 className="movies-card__favorite-btn"
-              ></button>
+              ></button>                
+              </div>
+              <p className="movies-card__duration">1ч 42м</p>  
             </div>
           </li>
           <li className="movies-card">
             <img className="movies-card__cover" src={film9} />
-            <div className="movies-card__cover__container">
-              <div className="movies-card__desc">
-                <h5 className="movies-card__title">Дженис: Маленькая девочка грустит</h5>
-                <p className="movies-card__duration">1ч42м</p>
-              </div>
-              <button
+            <div className="movies-card__container">
+            <div className="movies-card__desc">                
+                <h2 className="movies-card__title">Дженис: Маленькая девочка грустит</h2>
+                <button
                 type="button"
                 className="movies-card__favorite-btn movies-card__favorite-btn_active"
-              ></button>
+              ></button>                
+              </div>
+              <p className="movies-card__duration">1ч 42м</p>  
             </div>
           </li>
           <li className="movies-card">
             <img className="movies-card__cover" src={film10} />
-            <div className="movies-card__cover__container">
-              <div className="movies-card__desc">
-                <h5 className="movies-card__title">Соберись перед прыжком</h5>
-                <p className="movies-card__duration">1ч42м</p>
-              </div>
-              <button
+            <div className="movies-card__container">
+            <div className="movies-card__desc">                
+                <h2 className="movies-card__title">Соберись перед прыжком</h2>
+                <button
                 type="button"
                 className="movies-card__favorite-btn"
-              ></button>
+              ></button>                
+              </div>
+              <p className="movies-card__duration">1ч 42м</p>  
             </div>
           </li>
           <li className="movies-card">
             <img className="movies-card__cover" src={film11} />
-            <div className="movies-card__cover__container">
-              <div className="movies-card__desc">
-                <h5 className="movies-card__title">Пи Джей Харви: A dog called money</h5>
-                <p className="movies-card__duration">1ч42м</p>
-              </div>
-              <button
+            <div className="movies-card__container">
+            <div className="movies-card__desc">                
+                <h2 className="movies-card__title">Пи Джей Харви: A dog called money</h2>
+                <button
                 type="button"
                 className="movies-card__favorite-btn"
-              ></button>
+              ></button>                
+              </div>
+              <p className="movies-card__duration">1ч 42м</p>  
             </div>
           </li>
           <li className="movies-card">
             <img className="movies-card__cover" src={film12} />
-            <div className="movies-card__cover__container">
-              <div className="movies-card__desc">
-                <h5 className="movies-card__title">По волнам: Искусство звука в кино</h5>
-                <p className="movies-card__duration">1ч42м</p>
-              </div>
-              <button
+            <div className="movies-card__container">
+            <div className="movies-card__desc">                
+                <h2 className="movies-card__title">По волнам: Искусство звука в кино</h2>
+                <button
                 type="button"
                 className="movies-card__favorite-btn"
-              ></button>
+              ></button>                
+              </div>
+              <p className="movies-card__duration">1ч 42м</p>  
             </div>
           </li>
           <li className="movies-card">
             <img className="movies-card__cover" src={film13} />
-            <div className="movies-card__cover__container">
-              <div className="movies-card__desc">
-                <h5 className="movies-card__title">Рудбой</h5>
-                <p className="movies-card__duration">1ч42м</p>
-              </div>
-              <button
+            <div className="movies-card__container">
+            <div className="movies-card__desc">                
+                <h2 className="movies-card__title">Рудбой</h2>
+                <button
                 type="button"
                 className="movies-card__favorite-btn"
-              ></button>
+              ></button>                
+              </div>
+              <p className="movies-card__duration">1ч 42м</p>  
             </div>
           </li>
           <li className="movies-card">
             <img className="movies-card__cover" src={film14} />
-            <div className="movies-card__cover__container">
-              <div className="movies-card__desc">
-                <h5 className="movies-card__title">Скейт — кухня</h5>
-                <p className="movies-card__duration">1ч42м</p>
-              </div>
-              <button
+            <div className="movies-card__container">
+            <div className="movies-card__desc">                
+                <h2 className="movies-card__title">Скейт — кухня</h2>
+                <button
                 type="button"
                 className="movies-card__favorite-btn"
-              ></button>
+              ></button>                
+              </div>
+              <p className="movies-card__duration">1ч 42м</p>  
             </div>
           </li>
           <li className="movies-card">
             <img className="movies-card__cover" src={film15} />
-            <div className="movies-card__cover__container">
-              <div className="movies-card__desc">
-                <h5 className="movies-card__title">Война искусств</h5>
-                <p className="movies-card__duration">1ч42м</p>
-              </div>
-              <button
+            <div className="movies-card__container">
+            <div className="movies-card__desc">                
+                <h2 className="movies-card__title">Война искусств</h2>
+                <button
                 type="button"
                 className="movies-card__favorite-btn"
-              ></button>
+              ></button>                
+              </div>
+              <p className="movies-card__duration">1ч 42м</p>  
             </div>
           </li>
           <li className="movies-card">
             <img className="movies-card__cover" src={film16} />
-            <div className="movies-card__cover__container">
-              <div className="movies-card__desc">
-                <h5 className="movies-card__title">Зона</h5>
-                <p className="movies-card__duration">1ч42м</p>
-              </div>
-              <button
+            <div className="movies-card__container">
+            <div className="movies-card__desc">                
+                <h2 className="movies-card__title">Зона</h2>
+                <button
                 type="button"
                 className="movies-card__favorite-btn movies-card__favorite-btn_active"
-              ></button>
+              ></button>                
+              </div>
+              <p className="movies-card__duration">1ч 42м</p>  
             </div>
           </li>
         </>
@@ -238,41 +238,41 @@ export default function MoviesCard() {
         <>
           <li className="movies-card">
             <img className="movies-card__cover" src={film1} />
-            <div className="movies-card__cover__container">
-              <div className="movies-card__desc">
-                <h5 className="movies-card__title">33 слова о дизайне</h5>
-                <p className="movies-card__duration">1ч42м</p>
-              </div>
-              <button
+            <div className="movies-card__container">
+            <div className="movies-card__desc">                
+                <h2 className="movies-card__title">33 слова о дизайне</h2>
+                <button
                 type="button"
                 className="movies-card__delete-btn"
-              ></button>
+              ></button>                
+              </div>
+              <p className="movies-card__duration">1ч 42м</p>  
             </div>
           </li>
           <li className="movies-card">
             <img className="movies-card__cover" src={film2} />
-            <div className="movies-card__cover__container">
-              <div className="movies-card__desc">
-                <h5 className="movies-card__title">33 слова о дизайне</h5>
-                <p className="movies-card__duration">1ч42м</p>
-              </div>
-              <button
+            <div className="movies-card__container">
+            <div className="movies-card__desc">                
+                <h2 className="movies-card__title">Киноальманах «100 лет дизайна»</h2>
+                <button
                 type="button"
                 className="movies-card__delete-btn"
-              ></button>
+              ></button>                
+              </div>
+              <p className="movies-card__duration">1ч 42м</p>  
             </div>
           </li>
           <li className="movies-card">
             <img className="movies-card__cover" src={film3} />
-            <div className="movies-card__cover__container">
-              <div className="movies-card__desc">
-                <h5 className="movies-card__title">33 слова о дизайне</h5>
-                <p className="movies-card__duration">1ч42м</p>
-              </div>
-              <button
+            <div className="movies-card__container">
+            <div className="movies-card__desc">                
+                <h2 className="movies-card__title">В погоне за Бенкси</h2>
+                <button
                 type="button"
-                className=" movies-card__delete-btn"
-              ></button>
+                className="movies-card__delete-btn"
+              ></button>                
+              </div>
+              <p className="movies-card__duration">1ч 42м</p>  
             </div>
           </li>
         </>

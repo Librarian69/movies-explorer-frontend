@@ -19,7 +19,7 @@ export default function MoviesCardList() {
       <ul className="movies-card-list__container">
         {loading ? preloader : <MoviesCard />}
       </ul>
-      <button className="movies-card-list__btn">Ещё</button>
+      <button className="movies-card-list__btn" type="button">Ещё</button>
     </div>
   );
 }

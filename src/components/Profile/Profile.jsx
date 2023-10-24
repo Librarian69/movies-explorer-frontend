@@ -3,6 +3,7 @@ import "./Profile.css";
 import * as Yup from "yup";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import Header from "../Header/Header";
+import { Link } from "react-router-dom";
 
 export default function Profile() {
   //начальные значения для Formik
@@ -32,8 +33,8 @@ export default function Profile() {
   return (
     <>
       <Header />
-      <div className="profile">
-        <h2 className="profile__title">Привет, Виталий!</h2>
+      <section className="profile">
+        <h1 className="profile__title">Привет, Виталий!</h1>
 
         <Formik
           initialValues={initialValues}
@@ -42,7 +43,7 @@ export default function Profile() {
         >
           {(formik) => {
             return (
-              <Form className="profile__form">
+              <Form className="profile__form" action="https://www.w3docs.com/">
                 <label className="profile__field profile__field_border">
                   Имя
                   <Field
@@ -78,15 +79,16 @@ export default function Profile() {
                   <button className="profile__edit" type="submit">
                     Редактировать
                   </button>
-                  <button className="profile__logout" type="button">
-                    Выйти из аккаунта
+                  <button className="profile__logout" type="button" onclick="window.location.href = 'http://localhost:3000/';">
+                    <Link className="profile__link" to="/">Выйти из аккаунта</Link>
+                    {/* Выйти из аккаунта */}
                   </button>
                 </div>
               </Form>
             );
           }}
         </Formik>
-      </div>
+      </section>
     </>
   );
 }

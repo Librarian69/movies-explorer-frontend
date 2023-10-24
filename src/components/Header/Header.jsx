@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
 import logo from "../../images/logo.svg";
@@ -7,9 +7,11 @@ import Navigation from "../Navigation/Navigation";
 
 export default function Header({ isLogged }) {
   // поменять состояние
+  const [open, setOpen] = useState(false);
+
   return (
     <>
-      {!isLogged ? (
+      {isLogged ? (
         <header className="header" id="header">
           <Link to="/" className="header__logo">
             <img src={logo} alt="Логотип сайта" />
@@ -24,12 +26,12 @@ export default function Header({ isLogged }) {
           </div>
         </header>
       ) : (
-        <header className="header header__main" id="header">
+        <header className="header header_theme-authenticated" id="header">
           <Link to="/" className="header__logo">
             <img src={logo} alt="Логотип сайта" />
           </Link>
-          <Navigation />
-          <button className="header__btn header__btn_burger">
+          <Navigation open={open} setOpen={setOpen} />
+          <button className="header__btn header__btn_burger" type="button" onClick={() => setOpen(true)}>
             <img src={menu} alt="Меню" />
           </button>
         </header>

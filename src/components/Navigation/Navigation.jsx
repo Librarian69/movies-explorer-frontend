@@ -2,22 +2,28 @@ import React from "react";
 import "./Navigation.css";
 import { Link, NavLink } from "react-router-dom";
 
-export default function Navigation() {
+
+export default function Navigation({open, setOpen}) {
+
+  const style = {
+    display: open ? 'flex' : 'none'
+  }
+
   return window.innerWidth > 768 ? (
     <>
-      <div className="navigation__btn-container navigation__btn-container_films">
-        <Link to="/movies" className="navigation__btn navigation__btn_bold">
+      <div className="header__main-nav header__main-nav_films">
+        <Link to="/movies" className="header__main-nav-btn header__main-nav-btn_bold">
           Фильмы
         </Link>
-        <Link to="/saved-movies" className="navigation__btn">
+        <Link to="/saved-movies" className="header__main-nav-btn">
           Сохраненные фильмы
         </Link>
       </div>
-      <div className="navigation__btn-container">
+      <div className="header__main-nav">
         <Link
           to="/profile"
           // onClick
-          className="navigation__btn navigation__btn_account"
+          className="header__main-nav-btn header__main-nav-btn_account"
         >
           Аккаунт
         </Link>
@@ -27,37 +33,37 @@ export default function Navigation() {
     <>
       {/* в Header.css 
         .header__btn-container_blok {изменить display: none; на display: block} */}
-      <div className="navigation__overlay">
-        <div className="navigation__container-wrapper"></div>
-        <div className="navigation__list">
-          <button className="navigation__close-button"></button>
-          <nav className="navigation__link">
+      <div className="header__navigation-overlay" style={style}>
+        <div className="header__navigation-container-wrapper"></div>
+        <div className="header__navigation-list">
+          <button className="header__navigation-close-button" type="button" onClick={() => setOpen(false)}></button>
+          <nav className="header__navigation-link">
             <NavLink
               exact
               to="/"
-              className="navigation__item"
-              activeClassName="navigation__item_active"
+              className="header__navigation-item"
+              activeClassName="header__navigation-item_active"
             >
               Главная
             </NavLink>
             <NavLink
               to="/movies"
-              className="navigation__item"
-              activeClassName="navigation__item_active"
+              className="header__navigation-item"
+              activeClassName="header__navigation-item_active"
             >
               Фильмы
             </NavLink>
             <NavLink
               to="/saved-movies"
-              className="navigation__item"
-              activeClassName="navigation__item_active"
+              className="header__navigation-item"
+              activeClassName="header__navigation-item_active"
             >
               Сохранённые фильмы
             </NavLink>
           </nav>
           <Link
             to="/profile"
-            className="navigation__btn navigation__btn_account"
+            className="header__main-nav-btn header__main-nav-btn_account"
           >
             Аккаунт
           </Link>
