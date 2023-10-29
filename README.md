@@ -1,6 +1,6 @@
 # movies-explorer-frontend
 
-## Ссылку на пул реквест.
+## Ссылка на пул реквест.
 
 https://github.com/Librarian69/movies-explorer-frontend/pull/2
 
