@@ -22,7 +22,6 @@ export default function FilterCheckbox() {
       <input
         className="search__filter-checkbox-input"
         type="checkbox"
-        required
         onChange={handleSelect}
         checked={location.pathname === "/movies" ? short : saveShort}
       ></input>
