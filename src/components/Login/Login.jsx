@@ -1,11 +1,19 @@
 import React from "react";
 import "./Login.css";
 import * as Yup from "yup";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../images/logo.svg";
 import { ErrorMessage, Field, Form, Formik } from "formik";
+import { useMutation } from "@tanstack/react-query";
+import { handleLogin } from "../../utils/MainApi";
+import { useDispatch } from "react-redux";
+import { setToken } from "../../redux/slices/userReducer";
 
 export default function Login() {
+  const navigate = useNavigate();
+
+  const dispatch = useDispatch();
+
   const initialValues = {
     email: "",
     password: "",
@@ -24,8 +32,21 @@ export default function Login() {
   });
 
   const onSubmit = (values) => {
-    console.log(values);
+    handleRegister(values, {
+      onSuccess: (res) => {
+        console.log(res);
+        dispatch(setToken(res.token));
+        navigate("/movies");
+      },
+      onError: (res) => {
+        alert("Произошла ошибка. Попробуйте еще раз");
+      },
+    });
   };
+
+  const { mutate: handleRegister } = useMutation({
+    mutationFn: handleLogin,
+  });
 
   return (
     <>
@@ -33,7 +54,7 @@ export default function Login() {
         <Link to="/" className="login__logo">
           <img src={logo} alt="Логотип сайта" />
         </Link>
-        <h1 className="login__title">Рады видеть!</h1>
+        <h2 className="login__title">Рады видеть!</h2>
 
         <Formik
           initialValues={initialValues}
@@ -41,12 +62,13 @@ export default function Login() {
           onSubmit={onSubmit}
         >
           {(formik) => {
+            const { isValid, dirty } = formik;
             return (
               <Form className="user-form">
                 <label className="user-form__field">
                   E-mail
                   <Field
-                    className="user-form__input user-form__input_type_email"
+                    className="form__input form__input_type_email user-form__input"
                     id="input-userEmail"
                     name="email"
                     type="email"
@@ -62,7 +84,7 @@ export default function Login() {
                 <label className="user-form__field">
                   Пароль
                   <Field
-                    className="user-form__input user-form__input_type_password"
+                    className="form__input form__input_type_password user-form__input"
                     id="input-password"
                     name="password"
                     type="password"
@@ -73,7 +95,11 @@ export default function Login() {
                     className="error__message"
                   />
                 </label>
-                <button className="user-form__button" type="submit">
+                <button
+                  className="user-form__button"
+                  type="submit"
+                  disabled={!(dirty && isValid)}
+                >
                   Войти
                 </button>
                 <p className="user-form__subtitle">

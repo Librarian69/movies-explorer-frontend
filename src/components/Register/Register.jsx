@@ -2,10 +2,22 @@ import React from "react";
 import "./Register.css";
 import * as Yup from "yup";
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../images/logo.svg";
+import { useMutation } from "@tanstack/react-query";
+import axios from "axios";
+import { handleLogin, handleReg } from "../../utils/MainApi";
+import { useDispatch } from "react-redux";
+import { setToken } from "../../redux/slices/userReducer";
 
 export default function Register() {
+  const validMail =
+    /^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$/;
+
+  const dispatch = useDispatch();
+
+  const navigate = useNavigate();
+
   const initialValues = {
     name: "",
     email: "",
@@ -14,15 +26,13 @@ export default function Register() {
 
   const loginSchema = Yup.object().shape({
     name: Yup.string()
-      .typeError("Должно быть строкой")
       .required("Обязательное поле")
       .min(2, "Введите не менее 2 символов")
       .max(20, "Введите не более 20 символов"),
     email: Yup.string("Введите корректный email")
-      .email("Введите корректный email")
-      .required("Обязательное поле")
+      .matches(validMail, "Введите корректный email")
       .min(5, "Введите не менее 5 символов")
-      .max(25, "Введите не более 25 символов"), //ключ email - это строка, эл/адрес, обязательное поле(не пустое), минималье кол-во и максимальное кол-во символов - эти методы взяты из библиотеки Yup
+      .max(25, "Введите не более 25 символов"),
     password: Yup.string("Введите корректный пароль")
       .min(5, "Введите не менее 5 символов")
       .max(25, "Введите не более 25 символов")
@@ -30,8 +40,27 @@ export default function Register() {
   });
 
   const onSubmit = (values) => {
-    console.log(values);
+    handleRegister(values, {
+      onSuccess: (res) => {
+        console.log(res);
+        handleLogin({ email: values.email, password: values.password })
+          .then((res) => {
+            dispatch(setToken(res.token));
+            navigate("/movies");
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      },
+      onError: (res) => {
+        alert("Произошла ошибка. Попробуйте еще раз");
+      },
+    });
   };
+
+  const { mutate: handleRegister } = useMutation({
+    mutationFn: handleReg,
+  });
 
   return (
     <>
@@ -39,7 +68,7 @@ export default function Register() {
         <Link to="/" className="register__logo">
           <img src={logo} alt="Логотип сайта" />
         </Link>
-        <h1 className="register__title">Добро пожаловать!</h1>
+        <h2 className="register__title">Добро пожаловать!</h2>
 
         <Formik
           initialValues={initialValues}
@@ -47,12 +76,13 @@ export default function Register() {
           onSubmit={onSubmit}
         >
           {(formik) => {
+            const { isValid, dirty } = formik;
             return (
               <Form className="user-form">
                 <label className="user-form__field">
                   Имя
                   <Field
-                    className="user-form__input user-form__input_type_name"
+                    className="form__input form__input_type_name user-form__input"
                     id="input-userName"
                     name="name"
                     type="text"
@@ -68,7 +98,7 @@ export default function Register() {
                 <label className="user-form__field">
                   E-mail
                   <Field
-                    className="user-form__input user-form__input_type_email"
+                    className="form__input form__input_type_email user-form__input"
                     id="input-userEmail"
                     name="email"
                     type="email"
@@ -84,7 +114,7 @@ export default function Register() {
                 <label className="user-form__field">
                   Пароль
                   <Field
-                    className="user-form__input user-form__input_type_password"
+                    className="form__input form__input_type_password user-form__input"
                     id="input-password"
                     name="password"
                     type="password"
@@ -95,7 +125,11 @@ export default function Register() {
                     className="error__message"
                   />
                 </label>
-                <button className="user-form__button" type="submit">
+                <button
+                  className="user-form__button"
+                  type="submit"
+                  disabled={!(dirty && isValid)}
+                >
                   Зарегестрироваться
                 </button>
                 <p className="user-form__subtitle">

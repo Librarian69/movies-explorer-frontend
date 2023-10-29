@@ -1,6 +1,7 @@
 # movies-explorer-frontend
 
 ## Нзвание макета
+
 light-1
 
 ## Ссылка на макет
