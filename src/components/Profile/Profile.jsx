@@ -70,10 +70,10 @@ export default function Profile() {
   return (
     <>
       <Header />
-      <div className="profile">
-        <h2 className="profile__title">
+      <section className="profile">
+        <h1 className="profile__title">
           Привет, {userInfo?.name || "Незнакомец"}!
-        </h2>
+        </h1>
 
         <Formik
           initialValues={initialValues}
@@ -136,7 +136,7 @@ export default function Profile() {
             );
           }}
         </Formik>
-      </div>
+      </section>
     </>
   );
 }

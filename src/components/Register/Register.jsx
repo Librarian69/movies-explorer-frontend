@@ -5,7 +5,6 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../images/logo.svg";
 import { useMutation } from "@tanstack/react-query";
-import axios from "axios";
 import { handleLogin, handleReg } from "../../utils/MainApi";
 import { useDispatch } from "react-redux";
 import { setToken } from "../../redux/slices/userReducer";
@@ -82,7 +81,7 @@ export default function Register() {
                 <label className="user-form__field">
                   Имя
                   <Field
-                    className="form__input form__input_type_name user-form__input"
+                    className="user-form__input user-form__input_type_name"
                     id="input-userName"
                     name="name"
                     type="text"
@@ -98,7 +97,7 @@ export default function Register() {
                 <label className="user-form__field">
                   E-mail
                   <Field
-                    className="form__input form__input_type_email user-form__input"
+                    className="user-form__input user-form__input_type_email"
                     id="input-userEmail"
                     name="email"
                     type="email"
@@ -114,7 +113,7 @@ export default function Register() {
                 <label className="user-form__field">
                   Пароль
                   <Field
-                    className="form__input form__input_type_password user-form__input"
+                    className="user-form__input user-form__input_type_password"
                     id="input-password"
                     name="password"
                     type="password"

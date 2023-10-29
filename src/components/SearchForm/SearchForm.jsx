@@ -45,8 +45,9 @@ export default function SearchForm() {
           <button className="search__btn" type="submit">
             Найти
           </button>
+          <span className="search__border"></span>
+          <FilterCheckbox />
         </form>
-        <FilterCheckbox />
       </section>
     </>
   );

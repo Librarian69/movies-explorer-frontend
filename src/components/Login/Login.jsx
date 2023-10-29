@@ -68,7 +68,7 @@ export default function Login() {
                 <label className="user-form__field">
                   E-mail
                   <Field
-                    className="form__input form__input_type_email user-form__input"
+                    className="user-form__input user-form__input_type_email "
                     id="input-userEmail"
                     name="email"
                     type="email"
@@ -84,7 +84,7 @@ export default function Login() {
                 <label className="user-form__field">
                   Пароль
                   <Field
-                    className="form__input form__input_type_password user-form__input"
+                    className="user-form__input user-form__input_type_password "
                     id="input-password"
                     name="password"
                     type="password"
