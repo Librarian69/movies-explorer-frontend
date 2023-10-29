@@ -1,9 +1,5 @@
 # movies-explorer-frontend
 
-## Нзвание макета
+## Ссылкf на задеплоенный на сервере проект.
 
-light-1
-
-## Ссылка на макет
-
-https://www.figma.com/file/6FMWkB94wE7KTkcCgUXtnC/Дипломный-проект?type=design&node-id=932-3228&mode=design&t=sqzJbHsBVQHwlN7Z-0
+https://movies-mikhail.nomoredomainsrocks.ru/
