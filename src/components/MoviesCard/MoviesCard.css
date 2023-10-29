@@ -104,6 +104,14 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .movies-card__delete-btn {
+    background-color: #e8e8e8;
+    border-radius: 50px;
+    opacity: 1;
+  }
+}
+
 @media screen and (max-width: 576px) {
   .movies-card__cover {
     height: 168px;
