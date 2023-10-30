@@ -23,11 +23,16 @@
   cursor: pointer;
   opacity: 0.6;
 }
+
+.header__main-nav_films .header__main-nav-btn:first-of-type {
+  padding-left: 62px;
+}
+
 .header__main-nav-btn_bold {
   font-weight: 500;
   font-size: 13px;
   line-height: 18px;
-  padding-left: 62px;
+  /* padding-left: 62px; */
 }
 .header__main-nav-btn_account {
   /* position: relative; */
