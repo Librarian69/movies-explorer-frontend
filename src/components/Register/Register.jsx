@@ -129,7 +129,7 @@ export default function Register() {
                   type="submit"
                   disabled={!(dirty && isValid)}
                 >
-                  Зарегестрироваться
+                  Зарегистрироваться
                 </button>
                 <p className="user-form__subtitle">
                   Уже зарегистрированы?{" "}
