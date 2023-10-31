@@ -45,7 +45,9 @@ export default function Register() {
         handleLogin({ email: values.email, password: values.password })
           .then((res) => {
             dispatch(setToken(res.token));
-            navigate("/movies");
+            setTimeout(() => {
+              navigate("/movies");
+            }, 0);
           })
           .catch((err) => {
             console.log(err);

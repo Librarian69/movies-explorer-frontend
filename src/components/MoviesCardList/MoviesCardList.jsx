@@ -5,6 +5,7 @@ import MoviesCard from "../MoviesCard/MoviesCard";
 import SearchError from "../SearchError/SearchError";
 
 export default function MoviesCardList({
+  likeMovies,
   loadMore,
   movies,
   isBlocked,
@@ -35,6 +36,7 @@ export default function MoviesCardList({
           : movies.map((elem) => {
               return (
                 <MoviesCard
+                  likeMovies={likeMovies}
                   movie={elem}
                   onUpdate={onUpdate}
                   key={isSavedFilms ? elem._id : elem.id}

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Header.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../../images/logo.svg";
 import menu from "../../images/menu-button.svg";
 import Navigation from "../Navigation/Navigation";
@@ -9,6 +9,11 @@ import { useSelector } from "react-redux";
 export default function Header() {
   const token = useSelector((state) => state.user.token);
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+
+  const styleBackground = {
+    backgroundColor: location.pathname === "/" ? "#073042" : "#ffffff",
+  };
 
   return (
     <>
@@ -27,7 +32,11 @@ export default function Header() {
           </div>
         </header>
       ) : (
-        <header className="header header_theme-authenticated" id="header">
+        <header
+          className="header header_theme-authenticated"
+          style={styleBackground}
+          id="header"
+        >
           <Link to="/" className="header__logo">
             <img src={logo} alt="Логотип сайта" />
           </Link>

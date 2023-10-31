@@ -3,14 +3,16 @@ import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import SearchForm from "../SearchForm/SearchForm";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getLikeMovies } from "../../utils/MainApi";
+import { setSaveSearch, setSaveShort } from "../../redux/slices/searchReducer";
 
 export default function SavedMovies() {
   const token = useSelector((state) => state.user.token);
   const saveShort = useSelector((state) => state.search.saveShort);
   const saveSearch = useSelector((state) => state.search.saveSearch);
   const [likedMovies, setLikedMovies] = useState([]);
+  const dispatch = useDispatch();
 
   function updateLikeMovies() {
     getLikeMovies(token)
@@ -42,6 +44,11 @@ export default function SavedMovies() {
     updateLikeMovies();
   }, [token, saveSearch, saveShort]);
 
+  useEffect(() => {
+    dispatch(setSaveSearch(""));
+    dispatch(setSaveShort(false));
+  }, []);
+
   return (
     <>
       <Header />
@@ -51,6 +58,7 @@ export default function SavedMovies() {
         isBlocked={true}
         onUpdate={updateLikeMovies}
         isSavedFilms={true}
+        likeMovies={likedMovies}
       />
       <Footer />
     </>

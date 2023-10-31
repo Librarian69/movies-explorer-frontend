@@ -21,6 +21,7 @@ import {
   TABLETCOUNT,
   TABLETWIDTH,
 } from "../../utils/constants";
+import { getLikeMovies } from "../../utils/MainApi";
 
 export default function Movies() {
   const [movies, setMovies] = useState(new Array(1));
@@ -33,6 +34,8 @@ export default function Movies() {
   const short = useSelector((state) => state.search.short);
   const [err, setErr] = useState(false);
   const dispatch = useDispatch();
+  const [likeMovies, setLikeMovies] = useState([]);
+  const token = useSelector((state) => state.user.token);
 
   const [loading, setLoading] = useState(false);
 
@@ -83,6 +86,17 @@ export default function Movies() {
   }, [countFilms, movies, max]);
 
   useEffect(() => {
+    getLikeMovies(token)
+      .then((data) => {
+        // setIsLike(data.find((elem) => elem.movieId === movie.id));
+        setLikeMovies(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [token]);
+
+  useEffect(() => {
     if (search !== "") {
       setMovies(
         moviesRedux.filter((elem) => {
@@ -115,6 +129,7 @@ export default function Movies() {
         movies={movies.slice(0, countFilms)}
         loading={loading}
         isSavedFilms={false}
+        likeMovies={likeMovies}
       />
       <Footer />
     </>

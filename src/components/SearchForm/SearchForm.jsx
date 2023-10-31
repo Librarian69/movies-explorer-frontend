@@ -26,7 +26,7 @@ export default function SearchForm() {
   }
   useEffect(() => {
     if (location.pathname === "/saved-movies") {
-      setValue(saveSearch);
+      setValue("");
     }
   }, []);
 

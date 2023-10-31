@@ -7,6 +7,12 @@ export default function Navigation({ open, setOpen }) {
   const style = {
     display: open ? "flex" : "none",
   };
+  const styleColor = {
+    color: location.pathname === "/" ? "#fff" : "#000000",
+  };
+  const styleBack = {
+    backgroundColor: location.pathname === "/" ? "#2BE080" : "none",
+  };
   return window.innerWidth > 768 ? (
     <>
       {location.pathname === "/movies" ? (
@@ -35,10 +41,18 @@ export default function Navigation({ open, setOpen }) {
         </div>
       ) : (
         <div className="header__main-nav header__main-nav_films">
-          <Link to="/movies" className="header__main-nav-btn">
+          <Link
+            to="/movies"
+            style={styleColor}
+            className="header__main-nav-btn"
+          >
             Фильмы
           </Link>
-          <Link to="/saved-movies" className="header__main-nav-btn">
+          <Link
+            to="/saved-movies"
+            style={styleColor}
+            className="header__main-nav-btn"
+          >
             Сохраненные фильмы
           </Link>
         </div>
@@ -47,6 +61,7 @@ export default function Navigation({ open, setOpen }) {
         <Link
           to="/profile"
           className="header__main-nav-btn header__main-nav-btn_account"
+          style={styleBack}
         >
           Аккаунт
         </Link>

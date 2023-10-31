@@ -29,6 +29,13 @@ export const searchSlice = createSlice({
     setMoviesRedux: (state, action) => {
       state.moviesRedux = action.payload;
     },
+    clearReduxSearch: (state, action) => {
+      state.search = "";
+      state.short = false;
+      state.saveSearch = "";
+      state.saveShort = false;
+      state.moviesRedux = [];
+    },
   },
 });
 export default searchSlice.reducer;
@@ -36,6 +43,7 @@ export const {
   setSearch,
   clearSearch,
   setShort,
+  clearReduxSearch,
   setSaveSearch,
   setSaveShort,
   setMoviesRedux,

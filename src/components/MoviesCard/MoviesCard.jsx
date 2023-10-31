@@ -4,29 +4,30 @@ import { useLocation } from "react-router-dom";
 import { dislikeMovie, getLikeMovies, likeMovie } from "../../utils/MainApi";
 import { useSelector } from "react-redux";
 
-export default function MoviesCard({ movie, onUpdate }) {
+export default function MoviesCard({ movie, onUpdate, likeMovies }) {
   const location = useLocation();
   const token = useSelector((state) => state.user.token);
   const [isLike, setIsLike] = useState(false);
+
+  useEffect(() => {
+    setIsLike(likeMovies.find((elem) => elem.movieId === movie.id));
+  }, [likeMovies]);
+
   function getTimeFromMins(mins) {
     let hours = Math.trunc(mins / 60);
     let minutes = mins % 60;
     return hours + "ч. " + minutes + "м.";
   }
-  useEffect(() => {
-    getLikeMovies(token)
-      .then((data) => {
-        setIsLike(data.find((elem) => elem.movieId === movie.id));
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [token]);
 
   function handleClick(e) {
     if (isLike) {
-      dislikeMovie(movie.id, token);
-      setIsLike(false);
+      dislikeMovie(movie.id, token)
+        .then((res) => {
+          setIsLike(false);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     } else {
       likeMovie(
         {

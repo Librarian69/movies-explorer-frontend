@@ -8,11 +8,14 @@ import { editUserInfo, getUserInfo } from "../../utils/MainApi";
 import { useDispatch, useSelector } from "react-redux";
 import { useMutation } from "@tanstack/react-query";
 import { setToken } from "../../redux/slices/userReducer";
+import { clearReduxSearch } from "../../redux/slices/searchReducer";
 
 export default function Profile() {
   const token = useSelector((state) => state.user.token);
   const dispatch = useDispatch();
   const [userInfo, setUserInfo] = useState({});
+  const validEmail =
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   useEffect(() => {
     getUserInfo(token)
@@ -38,7 +41,8 @@ export default function Profile() {
       .min(2, "Введите не менее 2 символов")
       .max(20, "Введите не более 20 символов"),
     email: Yup.string("Введите корректный email")
-      .email("Введите корректный email")
+      // .email("Введите корректный email")
+      .matches(validEmail, "Введите корректный email")
       .required("Обязательное поле")
       .min(5, "Введите не менее 5 символов")
       .max(25, "Введите не более 25 символов"), //ключ email - это строка, эл/адрес, обязательное поле(не пустое), минималье кол-во и максимальное кол-во символов - эти методы взяты из библиотеки Yup
@@ -48,7 +52,9 @@ export default function Profile() {
     mutate(values, {
       onSuccess: (res) => {
         console.log(res);
-        alert("Сохранено");
+        if (res?._id) {
+          alert("Сохранено");
+        }
       },
       onError: (res) => {
         alert("Произошла ошибка. Попробуйте еще раз");
@@ -57,14 +63,14 @@ export default function Profile() {
   };
 
   const { mutate } = useMutation({
-    //useMutation - хук, который позволяет создать функцию отложенного вызова(срабатывают при клике, изменении, каком-то действии, главное не сразу)
     mutationFn: (values) => {
-      editUserInfo(token, values);
+      return editUserInfo(token, values);
     },
   });
 
   function logout() {
     dispatch(setToken(""));
+    dispatch(clearReduxSearch());
   }
 
   return (
