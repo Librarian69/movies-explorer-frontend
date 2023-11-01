@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./MoviesCard.css";
 import { useLocation } from "react-router-dom";
-import { dislikeMovie, getLikeMovies, likeMovie } from "../../utils/MainApi";
+import { dislikeMovie, likeMovie } from "../../utils/MainApi";
 import { useSelector } from "react-redux";
 
-export default function MoviesCard({ movie, onUpdate, likeMovies }) {
+export default function MoviesCard({ movie, likeMovies }) {
   const location = useLocation();
   const token = useSelector((state) => state.user.token);
   const [isLike, setIsLike] = useState(false);
+  const cardRef = useRef(null);
 
   useEffect(() => {
     setIsLike(likeMovies.find((elem) => elem.movieId === movie.id));
@@ -84,7 +85,7 @@ export default function MoviesCard({ movie, onUpdate, likeMovies }) {
         </>
       ) : (
         <>
-          <li className="movies-card">
+          <li className="movies-card" ref={cardRef}>
             <a href={movie.trailerLink} target="_blank" rel="noreferrer">
               <img
                 className="movies-card__cover"
@@ -101,8 +102,10 @@ export default function MoviesCard({ movie, onUpdate, likeMovies }) {
                   className="movies-card__delete-btn"
                   onClick={(e) => {
                     dislikeMovie(movie.movieId, token)
-                      .then(() => {
-                        onUpdate();
+                      .then((res) => {
+                        console.log(res);
+
+                        cardRef.current?.remove();
                       })
                       .catch((err) => {
                         console.log(err);

@@ -56,7 +56,6 @@ export default function SavedMovies() {
       <MoviesCardList
         movies={likedMovies}
         isBlocked={true}
-        onUpdate={updateLikeMovies}
         isSavedFilms={true}
         likeMovies={likedMovies}
       />

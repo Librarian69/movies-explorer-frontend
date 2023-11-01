@@ -11,7 +11,6 @@ export default function MoviesCardList({
   isBlocked,
   err,
   loading,
-  onUpdate,
   isSavedFilms,
 }) {
   const preloader = [...new Array(4)].map(() => <Preloader />);
@@ -38,7 +37,6 @@ export default function MoviesCardList({
                 <MoviesCard
                   likeMovies={likeMovies}
                   movie={elem}
-                  onUpdate={onUpdate}
                   key={isSavedFilms ? elem._id : elem.id}
                   isSavedFilms={isSavedFilms}
                 />

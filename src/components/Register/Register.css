@@ -104,9 +104,18 @@
   border: none;
   cursor: pointer;
 }
+
 .user-form__button:hover {
   opacity: 0.6;
   transition: 0.4s ease;
+}
+.user-form__button:disabled {
+  pointer-events: none;
+  background: #ffffff;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  color: #000000;
+  opacity: 0.2;
 }
 .form__button-save_unactive {
   pointer-events: none;
