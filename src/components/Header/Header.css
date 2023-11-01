@@ -1,0 +1,138 @@
+.header {
+  margin: 0;
+  padding: 18px 70px;
+  min-height: 74px;
+  background-color: #073042;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__btn-container {
+  margin: 0;
+  margin-left: auto;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+.header__btn {
+  min-height: 32px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  text-decoration: none;
+}
+
+.header__btn:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+.header__btn_white {
+  color: #ffffff;
+}
+.header__btn_signin {
+  color: #000000;
+  padding: 8px 20px;
+  background: #2be080;
+  border-radius: 3px;
+}
+.header__logo {
+  margin: 0;
+  padding: 0;
+  width: 38px;
+  height: 38px;
+}
+.header__logo:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+/* MAIN */
+.header_theme-authenticated {
+  background-color: #ffffff;
+}
+/* .header__btn-container_blok {
+    display: flex;
+    gap: 73px;
+} */
+.header__btn_bold {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+}
+.header__btn_account {
+  margin: 0;
+  padding: 8px 20px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  background: #f9f9f9;
+  border-radius: 20px;
+}
+.header__btn-container_films {
+  gap: 20px;
+}
+.header__btn_burger {
+  margin: 0;
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  background-color: inherit;
+  border: none;
+}
+.header__btn_burger {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 15px;
+  }
+
+  .header__btn-container_blok {
+    display: none;
+    /* изменить на блок, чтобы открылся попап в навигации на 768px */
+    /* display: block; */
+  }
+
+  .header__btn_burger {
+    display: flex;
+  }
+}
+/* 320px */
+@media screen and (max-width: 576px) {
+  .header {
+    /* max-width: 320px; */
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+  .header__btn {
+    font-size: 10px;
+    min-height: 26px;
+  }
+  .header__btn_burger {
+    width: 40px;
+    height: 43px;
+  }
+  .header__btn_signin {
+    padding: 5px 12px;
+  }
+  .header__btn-container {
+    gap: 15px;
+  }
+}

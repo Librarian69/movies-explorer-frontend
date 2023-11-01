@@ -1,0 +1,12 @@
+export const NOTEWIDTH = 1280;
+export const NOTEMAX = 4;
+export const NOTECOUNT = 16;
+export const NOTEMINWIDTH = 1024;
+export const NOTEMINMAX = 3;
+export const NOTEMINCOUNT = 12;
+export const TABLETWIDTH = 768;
+export const TABLETCOUNT = 8;
+export const PHONEMAXWIDTH = 480;
+export const TABLEPHONEMAX = 2;
+export const PHONEMAXCOUNT = 5;
+export const PHONEMINWIDTH = 320;
