@@ -64,7 +64,7 @@ export default function Login() {
           {(formik) => {
             const { isValid, dirty } = formik;
             return (
-              <Form className="user-form">
+              <Form className="user-form" autocomplete="off">
                 <label className="user-form__field">
                   E-mail
                   <Field
@@ -88,6 +88,7 @@ export default function Login() {
                     id="input-password"
                     name="password"
                     type="password"
+                    autocomplete="off"
                   />
                   <ErrorMessage
                     name="password"
